@@ -101,3 +101,9 @@ Transfer-Encoding: chunked
 
 Hello, Civo Navigate Europe!%
 ```
+
+## Resources
+
+- [Spin](https://github.com/fermyon/spin)
+- [SpinKube](https://spinkube.dev)
+- [Fermyon Developer Home](https://developer.fermyon.com/)
