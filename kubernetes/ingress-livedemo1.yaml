@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: livedemo1
+  labels:
+    name: livedemo1
+spec:
+  rules:
+    - host: livedemo1.civo
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: civo-livedemo1
+                port:
+                  number: 80

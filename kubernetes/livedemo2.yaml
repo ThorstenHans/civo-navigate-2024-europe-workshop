@@ -1,0 +1,18 @@
+apiVersion: core.spinoperator.dev/v1alpha1
+kind: SpinApp
+metadata:
+  name: civo-livedemo2
+spec:
+  image: ttl.sh/civo-livedemo2:24h
+  executor: containerd-shim-spin
+  replicas: 2
+  runtimeConfig:
+    keyValueStores:
+      - name: default
+        type: redis
+        options:
+          - name: url
+            valueFrom:
+              secretKeyRef:
+                name: civokv
+                key: valkey-url

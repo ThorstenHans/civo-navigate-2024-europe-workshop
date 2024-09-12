@@ -1,0 +1,19 @@
+spin_manifest_version = 2
+
+[application]
+name = "civo-livedemo1"
+version = "0.1.0"
+authors = ["Thorsten Hans <thorsten.hans@fermyon.com>"]
+description = ""
+
+[[trigger.http]]
+route = "/..."
+component = "civo-livedemo1"
+
+[component.civo-livedemo1]
+source = "target/wasm32-wasi/release/civo_livedemo1.wasm"
+allowed_outbound_hosts = []
+
+[component.civo-livedemo1.build]
+command = "cargo build --target wasm32-wasi --release"
+watch = ["src/**/*.rs", "Cargo.toml"]
